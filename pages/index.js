@@ -1,11 +1,12 @@
-import Layout from "../components/Layout";
+import Layout from "@/components/Layout";
 import Link from "next/link";
+
+import Showcase from "@/components/Showcase";
 
 export default function HomePage() {
   return (
     <Layout>
-      <h1>Home Page</h1>
-      <Link href="/about">About</Link>
+      <Showcase />
     </Layout>
   );
 }
