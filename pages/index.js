@@ -1,3 +1,5 @@
+import fetch from "isomorphic-unfetch";
+
 import Layout from "@/components/Layout";
 import Link from "next/link";
 import Post from "../components/Post";
@@ -29,10 +31,9 @@ export default function HomePage({ posts }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}`);
-  console.log(res);
+  const res = await fetch(`${API_URL}posts`);
   const posts = await res.json();
-  console.log(posts);
+
   return {
     props: { posts },
     revalidate: 1
