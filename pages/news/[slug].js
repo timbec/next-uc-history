@@ -5,7 +5,7 @@ import { API_URL } from "@/config/index";
 
 //import styles from "@/styles/Place.module.css";
 
-export default function PlacePage({ newsItem }) {
+export default function NewsItemPage({ newsItem }) {
   const router = useRouter();
   console.log(newsItem.title);
   return (
