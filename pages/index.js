@@ -1,52 +1,13 @@
 import Layout from "@/components/Layout";
 import Link from "next/link";
+import Showcase from '../components/Showcase';
 import Post from "../components/Post";
 
 import { API_URL } from "../config/index";
 
 console.log(API_URL);
 // places data
-<<<<<<< HEAD
-import { getAllWritingPosts } from "../lib/api";
-import { getAllNewsPosts } from "../lib/api";
-// import axios from "axios";
-=======
-import axios from "axios";
->>>>>>> 69b9a21c3e8e87373c59df864560201d5eb4b200
 
-
-<<<<<<< HEAD
-
-export default function Index({ newsPosts: { edges } }) {
-  const heroPost = edges[0]?.node
-  const morePosts = edges.slice(0)
-  console.log(morePosts);
-
-  return (
-    <>
-      <Layout>
-          {console.log(heroPost)}
-          {console.log(morePosts)}
-          {
-            morePosts.forEach(post => {
-              console.log(post.node.title);
-              console.log(post.node)
-              
-            })
-          }
-      </Layout>
-    </>
-  )
-}
-
-export async function getStaticProps() {
-
-  const newsPosts = await getAllNewsPosts()
-  return {
-    props: { newsPosts },
-  }
-}
-=======
 export default function HomePage({ posts }) {
   return (
     <Layout>
@@ -75,4 +36,3 @@ export async function getStaticProps() {
     revalidate: 1
   };
 }
->>>>>>> 69b9a21c3e8e87373c59df864560201d5eb4b200
