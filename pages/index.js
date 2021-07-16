@@ -15,6 +15,7 @@ export default function HomePage({ posts }) {
     <Layout>
       <h1>Main Page</h1>
       <Showcase />
+      {console.log(posts)}
       {posts.map(post => (
         <Post key={post.id} post={post} />
       ))}
@@ -30,8 +31,9 @@ export default function HomePage({ posts }) {
 
 export async function getStaticProps() {
   const res = await fetch(`${API_URL}posts`);
+  console.log(res)
   const posts = await res.json();
-
+  console.log(posts)
   return {
     props: { posts },
     revalidate: 1
